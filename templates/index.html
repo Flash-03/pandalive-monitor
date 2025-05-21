@@ -17,8 +17,14 @@
         {% endfor %}
         <button type="submit">删除选中</button>
     </form>
-    <form method="POST" action="/set_interval">
-        <input type="number" name="interval" value="{{ interval }}">
+    <form action="/start" method="post" style="display:inline;">
+        <button type="submit" style="background-color:green;color:white;">开始监控</button>
+    </form>
+
+    <form action="/stop" method="post" style="display:inline;">
+        <button type="submit" style="background-color:red;color:white;">停止监控</button>
+    </form>
+
         <button type="submit">设置频率（秒）</button>
     </form>
     <form method="POST" action="/toggle">
