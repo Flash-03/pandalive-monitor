@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pandalive 监控控制台</title>
+</head>
+<body>
+    <h2>Pandalive 监控器</h2>
+    <form method="POST" action="/add">
+        <input type="text" name="uid" placeholder="主播ID">
+        <button type="submit">添加主播</button>
+    </form>
+    <form method="POST" action="/delete">
+        <p>主播列表：</p>
+        {% for uid in ids %}
+            <input type="checkbox" name="uids" value="{{ uid }}"> {{ uid }}<br>
+        {% endfor %}
+        <button type="submit">删除选中</button>
+    </form>
+    <form method="POST" action="/set_interval">
+        <input type="number" name="interval" value="{{ interval }}">
+        <button type="submit">设置频率（秒）</button>
+    </form>
+    <form method="POST" action="/toggle">
+        <button type="submit">{{ '停止监控' if running else '开始监控' }}</button>
+    </form>
+    <p><a href="/logs" target="_blank">查看日志</a></p>
+</body>
+</html>
