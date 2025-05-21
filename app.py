@@ -12,7 +12,7 @@ from collections import defaultdict
 app = Flask(__name__)
 
 # ===== 配置 =====
-COOKIE_FILE = "cookie.txt"
+COOKIE = os.environ.get("COOKIE", "")
 try:
     with open(COOKIE_FILE, "r", encoding="utf-8") as f:
         COOKIE = f.read().strip()
