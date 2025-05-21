@@ -178,10 +178,16 @@ def delete_ids():
     save_ids()
     return redirect("/")
 
-@app.route("/toggle", methods=["POST"])
-def toggle_monitor():
+@app.route("/start", methods=["POST"])
+def start_monitor():
     global monitor_enabled
-    monitor_enabled = not monitor_enabled
+    monitor_enabled = True
+    return redirect("/")
+
+@app.route("/stop", methods=["POST"])
+def stop_monitor():
+    global monitor_enabled
+    monitor_enabled = False
     return redirect("/")
 
 @app.route("/set_interval", methods=["POST"])
