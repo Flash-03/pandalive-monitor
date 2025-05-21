@@ -13,13 +13,6 @@ app = Flask(__name__)
 
 # ===== 配置 =====
 COOKIE = os.environ.get("COOKIE", "")
-try:
-    with open(COOKIE_FILE, "r", encoding="utf-8") as f:
-        COOKIE = f.read().strip()
-except FileNotFoundError:
-    COOKIE = ""
-    print("⚠️ 请创建 cookie.txt 文件并填入 Cookie")
-
 TELEGRAM_BOT_TOKEN = "7561649005:AAFKMgsQRxBB1yYQ-9gzgoIdoKCyXrtTuCo"
 TELEGRAM_CHAT_ID = "1829072365"
 
