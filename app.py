@@ -146,7 +146,7 @@ def monitor():
                     log(f"{uid}: 🚫 房间满，跳过")
 
                 else:
-                    try：
+                    try:
                         json_data = json.loads(text)
                         message = json_data.get("message", "")
                         log(f"{uid}: ⚠️ 接口返回错误：{message}")
